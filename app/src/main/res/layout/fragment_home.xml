@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/primary"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/balanceCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@id/transferLimitAmountCardView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/availableBalanceTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Saldo disponible"
+                android:textColor="@color/secondary_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/amountValueTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="$1'576.000"
+                android:textColor="@color/primary_text"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="@id/profilePhotoImageView"
+                app:layout_constraintEnd_toEndOf="@id/horizontalGuide"
+                app:layout_constraintStart_toStartOf="@id/availableBalanceTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/availableBalanceTitleTextView" />
+
+            <TextView
+                android:id="@+id/cardNumberTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="****  6288"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/horizontalGuide"
+                app:layout_constraintStart_toStartOf="@id/amountValueTextView"
+                app:layout_constraintTop_toBottomOf="@id/amountValueTextView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontalGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePhotoImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginBottom="18dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@id/notificationButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/horizontalGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/notificationButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_bell"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/horizontalGuide" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notificationBadgeContainer"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@id/notificationButton"
+                app:layout_constraintTop_toTopOf="@id/notificationButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/transferLimitAmountCardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/guideline">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/circularProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cpb_background_progressbar_color="@color/divider"
+                app:cpb_progress="70"
+                app:cpb_progressbar_color="@color/primary"
+                app:cpb_progressbar_width="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/percentageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="70%"
+                android:textColor="@color/secondary_text"
+                app:layout_constraintBottom_toBottomOf="@id/circularProgress"
+                app:layout_constraintEnd_toEndOf="@id/circularProgress"
+                app:layout_constraintStart_toStartOf="@id/circularProgress"
+                app:layout_constraintTop_toTopOf="@id/circularProgress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monthlyTransferLimitTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Límite de transferencia mensual"
+                android:textColor="@color/primary_text"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/circularProgress"
+                app:layout_constraintTop_toTopOf="@id/circularProgress" />
+
+            <TextView
+                android:id="@+id/currentAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="$70.000"
+                android:textColor="@color/primary_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/of"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/circularProgress"
+                app:layout_constraintTop_toBottomOf="@id/monthlyTransferLimitTitle" />
+
+            <TextView
+                android:id="@+id/of"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text=" de "
+                app:layout_constraintEnd_toStartOf="@+id/maxAmountTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/currentAmountTextView"
+                app:layout_constraintTop_toTopOf="@id/currentAmountTextView" />
+
+            <TextView
+                android:id="@+id/maxAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="$4'500.000"
+                android:textColor="@color/primary_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/of"
+                app:layout_constraintTop_toTopOf="@id/of" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/transferTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Transacciones"
+        android:textColor="@color/primary_text"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/balanceCardView"
+        app:layout_constraintStart_toStartOf="@id/balanceCardView"
+        app:layout_constraintTop_toBottomOf="@id/transferLimitAmountCardView" />
+
+    <ImageView
+        android:id="@+id/chevronButtonImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_chevron_right_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/transferTitleTextView"
+        app:layout_constraintEnd_toEndOf="@id/balanceCardView"
+        app:layout_constraintTop_toTopOf="@id/transferTitleTextView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoriteTransfersRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/transferLimitAmountCardView"
+        app:layout_constraintStart_toStartOf="@id/transferLimitAmountCardView"
+        app:layout_constraintTop_toBottomOf="@id/transferTitleTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
