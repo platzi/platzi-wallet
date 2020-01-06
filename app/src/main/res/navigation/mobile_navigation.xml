@@ -15,7 +15,7 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.cristianvillamil.platziwallet.ui.dashboard.DashboardFragment"
         android:label="@string/title_loans"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_transfer" />
 
     <fragment
         android:id="@+id/navigation_notifications"

@@ -9,4 +9,6 @@
     <color name="icons">#212121</color>
     <color name="divider">#BDBDBD</color>
     <color name="background">#FDFDFD</color>
+    <color name="yellow">#F7A41A</color>
+    <color name="translucent_white">#E6FFFFFF</color>
 </resources>
