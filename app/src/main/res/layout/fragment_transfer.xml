@@ -54,16 +54,16 @@
         app:layout_constraintTop_toBottomOf="@id/availableBalanceValueTextView">
 
         <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/whoTransferTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/montserrat_bold"
             android:text="¿A quien vas a transferir?"
             android:textColor="@color/primary_text"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/transferAccountsRecyclerView"
@@ -78,7 +78,8 @@
             android:id="@+id/transferButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/accent"
+            android:background="@drawable/transfer_button_selector"
+            android:enabled="false"
             android:fontFamily="@font/montserrat_bold"
             android:text="Transferir"
             android:textColor="@color/translucent_white"

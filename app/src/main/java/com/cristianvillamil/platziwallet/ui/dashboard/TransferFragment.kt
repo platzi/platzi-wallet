@@ -9,14 +9,30 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.cristianvillamil.platziwallet.R
 import kotlinx.android.synthetic.main.fragment_transfer.*
 import java.text.NumberFormat
 
-class DashboardFragment : Fragment() {
+class TransferFragment : Fragment() {
 
+    private val DOLLAR_SYMBOL = "\$ "
+    private val CLEAN_STRING_REGEX_PATTERN = "[\$,.\\s]".toRegex()
     private lateinit var dashboardViewModel: DashboardViewModel
     private var current = ""
+    private var selectedTransferAccount: TransferAccount? = null
+
+    private val onItemSelectedListener: OnItemSelected<TransferAccount> =
+        object : OnItemSelected<TransferAccount> {
+            override fun onItemSelected(item: TransferAccount) {
+                selectedTransferAccount = item
+                item.isSelected = true
+                transferAccountsAdapter.unSelectAllDistinctTo(item)
+                transferAccountsAdapter.notifyDataSetChanged()
+                transferButton.isEnabled = true
+            }
+        }
+    private val transferAccountsAdapter = TransferAccountsAdapter(onItemSelectedListener)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,10 +50,28 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initAmountInputEditText()
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        transferAccountsRecyclerView.layoutManager = LinearLayoutManager(context)
+        transferAccountsRecyclerView.adapter = transferAccountsAdapter
+        val transferAccountList = listOf(
+            TransferAccount("", "", "", ""),
+            TransferAccount("", "", "", ""),
+            TransferAccount("", "", "", ""),
+            TransferAccount("", "", "", ""),
+            TransferAccount("", "", "", "")
+        )
+        transferAccountsAdapter.setTransferAccountList(transferAccountList)
+    }
+
+    private fun initAmountInputEditText() {
         amountValueInputEditText.onFocusChangeListener =
             View.OnFocusChangeListener { _, hasFocus ->
                 if (hasFocus && amountValueInputEditText.text.toString().isBlank()) {
-                    amountValueInputEditText.setText("\$ ")
+                    amountValueInputEditText.setText(DOLLAR_SYMBOL)
                 }
             }
         amountValueInputEditText.addTextChangedListener(object : TextWatcher {
@@ -51,9 +85,9 @@ class DashboardFragment : Fragment() {
                 s.toString().let { text ->
                     if (!text.isBlank() && text != current) {
                         amountValueInputEditText.removeTextChangedListener(this)
-                        val cleanString = text.replace("[\$,.\\s]".toRegex(), "")
+                        val cleanString = text.replace(CLEAN_STRING_REGEX_PATTERN, "")
                         if (cleanString.isBlank()) {
-                            amountValueInputEditText.setText("\$ ")
+                            amountValueInputEditText.setText(DOLLAR_SYMBOL)
                             amountValueInputEditText.addTextChangedListener(this)
                             amountValueInputEditText.setSelection(amountValueInputEditText.text.toString().length)
                         } else {
