@@ -48,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:elevation="5dp"
         android:background="@drawable/top_corners_rounded_bg"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"

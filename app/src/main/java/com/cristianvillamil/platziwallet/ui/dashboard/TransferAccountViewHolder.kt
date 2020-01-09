@@ -19,10 +19,10 @@ class TransferAccountViewHolder(
         }
         if (transferAccount.isSelected) {
             view.findViewById<CardView>(R.id.transferRowContainer)
-                .setBackgroundColor(ContextCompat.getColor(view.context, R.color.primary))
+                .setCardBackgroundColor(ContextCompat.getColor(view.context, R.color.primary))
         } else {
             view.findViewById<CardView>(R.id.transferRowContainer)
-                .setBackgroundColor(ContextCompat.getColor(view.context, R.color.divider))
+                .setCardBackgroundColor(ContextCompat.getColor(view.context, R.color.divider))
         }
         Picasso
             .get()

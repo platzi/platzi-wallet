@@ -57,13 +57,18 @@ class TransferFragment : Fragment() {
     private fun initRecyclerView() {
         transferAccountsRecyclerView.layoutManager = LinearLayoutManager(context)
         transferAccountsRecyclerView.adapter = transferAccountsAdapter
-        val transferAccountList = listOf(
-            TransferAccount("", "", "", ""),
-            TransferAccount("", "", "", ""),
-            TransferAccount("", "", "", ""),
-            TransferAccount("", "", "", ""),
-            TransferAccount("", "", "", "")
-        )
+        val transferAccount = TransferAccount.Builder("12345")
+            .setProfilePhotoUrl("htttps://www.google.com/imagenDePrueba")
+            .setUserName("Paquito Perez")
+            .build()
+        val transferAccountList = listOf(transferAccount)
+        /*val transferAccountList = listOf(
+            TransferAccount("", "", "", "", false,"","","","",""),
+            TransferAccount("", "", "", "", false,"","","","",""),
+            TransferAccount("", "", "", "", false,"","","","",""),
+            TransferAccount("", "", "", "", false,"","","","",""),
+            TransferAccount("", "", "", "", false,"","","","","")
+        )*/
         transferAccountsAdapter.setTransferAccountList(transferAccountList)
     }
 
