@@ -1,4 +1,4 @@
-package com.cristianvillamil.platziwallet.ui.dashboard
+package com.cristianvillamil.platziwallet.ui.transfer
 
 import android.view.View
 import android.widget.ImageView

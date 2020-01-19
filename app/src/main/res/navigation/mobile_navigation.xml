@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.cristianvillamil.platziwallet.ui.dashboard.TransferFragment"
+        android:name="com.cristianvillamil.platziwallet.ui.transfer.TransferFragment"
         android:label="@string/title_loans"
         tools:layout="@layout/fragment_transfer" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.cristianvillamil.platziwallet.ui.notifications.NotificationsFragment"
+        android:name="com.cristianvillamil.platziwallet.ui.loans.LoansFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_loans" />
 </navigation>

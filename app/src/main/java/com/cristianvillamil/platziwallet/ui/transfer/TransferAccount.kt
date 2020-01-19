@@ -1,4 +1,4 @@
-package com.cristianvillamil.platziwallet.ui.dashboard
+package com.cristianvillamil.platziwallet.ui.transfer
 
  class TransferAccount private constructor(
     var userName: String,

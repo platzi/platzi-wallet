@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary">
@@ -48,8 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:elevation="5dp"
         android:background="@drawable/top_corners_rounded_bg"
+        android:elevation="5dp"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/availableBalanceValueTextView">
@@ -73,7 +74,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@id/transferButton"
-            app:layout_constraintTop_toBottomOf="@id/whoTransferTitle" />
+            app:layout_constraintTop_toBottomOf="@id/whoTransferTitle"
+            tools:listitem="@layout/transfer_row" />
 
         <Button
             android:id="@+id/transferButton"

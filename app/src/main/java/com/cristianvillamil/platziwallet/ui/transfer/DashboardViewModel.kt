@@ -1,4 +1,4 @@
-package com.cristianvillamil.platziwallet.ui.dashboard
+package com.cristianvillamil.platziwallet.ui.transfer
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
