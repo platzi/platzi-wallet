@@ -130,7 +130,6 @@
         app:civ_circle_background_color="@color/translucent_white"
         android:layout_height="100dp"
         android:elevation="6dp"
-        android:src="@drawable/car"
         app:layout_constraintBottom_toTopOf="@id/loanCardView"
         app:layout_constraintEnd_toEndOf="@id/loanCardView"
         app:layout_constraintStart_toStartOf="@id/loanCardView"
