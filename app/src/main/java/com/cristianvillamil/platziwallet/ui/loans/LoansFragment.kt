@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.fragment_loans.*
 
 class LoansFragment : Fragment() {
 
-    private lateinit var loansViewModel: LoansViewModel
     private val adapter = LoansAdapter()
 
     override fun onCreateView(
@@ -21,8 +20,6 @@ class LoansFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        loansViewModel =
-            ViewModelProviders.of(this).get(LoansViewModel::class.java)
         return inflater.inflate(R.layout.fragment_loans, container, false)
     }
 
