@@ -251,6 +251,8 @@
             app:layout_constraintEnd_toEndOf="@id/transferLimitAmountCardView"
             app:layout_constraintStart_toStartOf="@id/transferLimitAmountCardView"
             app:layout_constraintTop_toBottomOf="@id/transferTitleTextView"
-            tools:listitem="@layout/favorite_transfer_row" />
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/favorite_transfer_row"
+            tools:orientation="horizontal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
