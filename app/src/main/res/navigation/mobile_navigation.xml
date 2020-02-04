@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.cristianvillamil.platziwallet.ui.home.HomeFragment"
+        android:name="com.cristianvillamil.platziwallet.ui.home.view.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 

@@ -254,5 +254,7 @@
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/favorite_transfer_row"
             tools:orientation="horizontal" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
