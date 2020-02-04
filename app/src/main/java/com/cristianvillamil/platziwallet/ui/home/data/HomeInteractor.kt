@@ -1,6 +1,7 @@
 package com.cristianvillamil.platziwallet.ui.home.data
 
 import android.os.Handler
+import com.cristianvillamil.platziwallet.UserSingleton
 import com.cristianvillamil.platziwallet.ui.home.FavoriteTransfer
 import com.cristianvillamil.platziwallet.ui.home.HomeContract
 
@@ -58,5 +59,7 @@ class HomeInteractor {
         }
         val handler = Handler()
         handler.postDelayed(runnable, 3000)
+
+        UserSingleton.getInstance().userName
     }
 }
