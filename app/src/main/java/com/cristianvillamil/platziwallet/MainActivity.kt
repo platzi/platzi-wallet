@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             .execute(this,"exampleFile", "HolaMundo", "PlatziWallet")
 
         commandsManager
-            .getCommand("SaveCommand")
+            .getCommand("ReadCommand")
             .execute(this, "exampleFile")
     }
 }
