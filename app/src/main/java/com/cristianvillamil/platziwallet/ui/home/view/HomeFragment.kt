@@ -43,12 +43,12 @@ class HomeFragment : Fragment(), HomeContract.View {
         initRecyclerView()
         homePresenter = HomePresenter(this)
         homePresenter?.retrieveFavoriteTransfers()
-        circularProgress.setProgressWithAnimation(
+        /*circularProgress.setProgressWithAnimation(
                 70f,
         1000,
         AccelerateDecelerateInterpolator(),
         500
-        )
+        )*/
         Picasso
             .get()
             .load("https://media.licdn.com/dms/image/C4E03AQFcCuDIJl0mKg/profile-displayphoto-shrink_200_200/0?e=1583366400&v=beta&t=ymt3xgMe5bKS-2knNDL9mQYFksP9ZHne5ugIqEyRjZs")
@@ -61,7 +61,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         })*/
         homePresenter!!.getPercentageLiveData().observe(this, Observer<String>{ value ->
-            percentageText.text = value
+            //percentageText.text = value
         })
 
     }

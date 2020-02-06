@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cpb_background_progressbar_color="@color/divider"
+        app:cpb_progressbar_color="@color/primary"
+        app:cpb_progressbar_width="4dp"
+        app:cpb_round_border="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percentageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="70%"
+        android:textColor="@color/secondary_text"
+        app:layout_constraintBottom_toBottomOf="@id/circularProgress"
+        app:layout_constraintEnd_toEndOf="@id/circularProgress"
+        app:layout_constraintStart_toStartOf="@id/circularProgress"
+        app:layout_constraintTop_toTopOf="@id/circularProgress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

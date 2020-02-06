@@ -141,29 +141,13 @@
                 android:layout_height="match_parent"
                 android:layout_margin="18dp">
 
-                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                <com.cristianvillamil.platziwallet.ui.PercentageView
                     android:id="@+id/circularProgress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cpb_background_progressbar_color="@color/divider"
-                    app:cpb_progressbar_color="@color/primary"
-                    app:cpb_progressbar_width="4dp"
-                    app:cpb_round_border="true"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/percentageText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="70%"
-                    android:textColor="@color/secondary_text"
-                    app:layout_constraintBottom_toBottomOf="@id/circularProgress"
-                    app:layout_constraintEnd_toEndOf="@id/circularProgress"
-                    app:layout_constraintStart_toStartOf="@id/circularProgress"
-                    app:layout_constraintTop_toTopOf="@id/circularProgress" />
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/monthlyTransferLimitTitle"
